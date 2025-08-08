@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Notes Sidebar per Page",
+  "version": "1.0.0",
+  "description": "Take persistent, page-specific notes and view visit statistics in a right-hand sidebar.",
+  "permissions": ["contextMenus", "tabs", "scripting", "storage"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "commands": {
+    "toggle-sidebar": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X",
+        "linux": "Ctrl+Shift+X",
+        "chromeos": "Ctrl+Shift+X"
+      },
+      "description": "Open sidebar and toggle pin"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sidebar.html", "sidebar.js", "sidebar.css"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
+
