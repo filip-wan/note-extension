@@ -671,7 +671,10 @@
       #notes-ext-format-toolbar { 
         background: #ffffff; 
         color: #111827; 
-        border-color: #d1d5db;
+        border-color: #d1d5db !important;
+      }
+      #notes-ext-format-toolbar .toolbar-header {
+        border-bottom-color: #e5e7eb !important;
       }
       .notes-ext-format-btn { 
         background: #f9fafb !important; 
@@ -688,7 +691,10 @@
       #notes-ext-sidebar-root.dark #notes-ext-format-toolbar { 
         background: #0f172a; 
         color: #e5e7eb; 
-        border-color: #374151; 
+        border-color: #374151 !important; 
+      }
+      #notes-ext-sidebar-root.dark #notes-ext-format-toolbar .toolbar-header {
+        border-bottom-color: #374151 !important;
       }
       #notes-ext-sidebar-root.dark .notes-ext-format-btn { 
         background: #1f2937 !important; 
@@ -703,7 +709,10 @@
       #notes-ext-sidebar-root.dark-blue #notes-ext-format-toolbar { 
         background: #0b2239; 
         color: #e6f0ff; 
-        border-color: #1b3354; 
+        border-color: #1b3354 !important; 
+      }
+      #notes-ext-sidebar-root.dark-blue #notes-ext-format-toolbar .toolbar-header {
+        border-bottom-color: #1b3354 !important;
       }
       #notes-ext-sidebar-root.dark-blue .notes-ext-format-btn { 
         background: #1b3354 !important; 
@@ -718,7 +727,10 @@
       #notes-ext-sidebar-root.dark-purple #notes-ext-format-toolbar { 
         background: #251a3f; 
         color: #ede9fe; 
-        border-color: #3a2a64; 
+        border-color: #3a2a64 !important; 
+      }
+      #notes-ext-sidebar-root.dark-purple #notes-ext-format-toolbar .toolbar-header {
+        border-bottom-color: #3a2a64 !important;
       }
       #notes-ext-sidebar-root.dark-purple .notes-ext-format-btn { 
         background: #3a2a64 !important; 
@@ -729,19 +741,7 @@
         background: #4a3578 !important; 
       }
 
-      /* Toolbar header theme styles */
-      #notes-ext-sidebar-root.dark #notes-ext-format-toolbar .toolbar-header { 
-        background: rgba(255,255,255,0.05); 
-        border-bottom-color: #374151; 
-      }
-      #notes-ext-sidebar-root.dark-blue #notes-ext-format-toolbar .toolbar-header { 
-        background: rgba(255,255,255,0.05); 
-        border-bottom-color: #1b3354; 
-      }
-      #notes-ext-sidebar-root.dark-purple #notes-ext-format-toolbar .toolbar-header { 
-        background: rgba(255,255,255,0.05); 
-        border-bottom-color: #3a2a64; 
-      }
+
     `;
     document.documentElement.appendChild(style);
   }
@@ -910,7 +910,7 @@
     const formatToolbar = document.createElement("div");
     formatToolbar.id = "notes-ext-format-toolbar";
     formatToolbar.style.cssText = `
-      border: 1px solid #d1d5db;
+      border: 1px solid;
       border-top: none;
       border-radius: 0 0 6px 6px;
       background: inherit;
@@ -925,7 +925,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 4px 8px;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid;
       background: rgba(0,0,0,0.02);
       cursor: pointer;
     `;
