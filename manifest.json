@@ -3,8 +3,22 @@
   "name": "Notes Sidebar per Page",
   "version": "1.0.0",
   "description": "Take persistent, page-specific notes and view visit statistics in a right-hand sidebar.",
-  "permissions": ["contextMenus", "tabs", "scripting", "storage"],
-  "host_permissions": ["*://*/*"],
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "permissions": ["contextMenus", "tabs", "scripting", "storage", "activeTab"],
   "background": {
     "service_worker": "service_worker.js"
   },
@@ -21,7 +35,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"],
       "run_at": "document_start"
     }
@@ -29,7 +43,7 @@
   "web_accessible_resources": [
     {
       "resources": ["sidebar.html", "sidebar.js", "sidebar.css"],
-      "matches": ["*://*/*"]
+      "matches": ["<all_urls>"]
     }
   ]
 }
